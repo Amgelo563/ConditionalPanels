@@ -1,0 +1,6 @@
+name: ConditionalPanels
+version: '${version}'
+main: me.amgelo563.conditionalpanels.ConditionalPanels
+depend: [ConditionalEvents, CommandPanels]
+authors: [Amgelo563]
+description: A ConditionalEvents plugin addon to integrate it with CommandPanels
