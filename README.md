@@ -4,9 +4,9 @@ A [ConditionalEvents](https://modrinth.com/plugin/conditionalevents) addon that 
 
 ## 🚀 Actions
 
-Actions are documented in the format:
+Actions are used in the format:
 ```
-action: <required> [optional]
+action_name: mainArgument [extraArgument= value] [otherArgument= otherValue]
 ```
 
 ### `cp_open`
@@ -14,7 +14,7 @@ Opens a CommandPanels panel to the player.
 
 #### Usage:
 ```
-cp_open: <panel name> [position=Top/Bottom/Middle] [placeholders=[placeholder1:value1],[placeholder2:value2],...]
+cp_open: <panel name> [position=Top/Bottom/Middle] [placeholders= placeholder1: value1; placeholder2: value2; ...]
 ```
 
 #### Examples:
@@ -25,13 +25,13 @@ actions:
       - "cp_open: menu"
 
       # Opens the "menu" panel in the Middle position
-      - "cp_open: menu position=Middle"
+      - "cp_open: menu [position=Middle]"
         
       # Opens the "menu" panel with the placeholders "example" and "example2"
-      - "cp_open: menu placeholders=[example: Placeholder Value],[example2: Other placeholder]"
+      - "cp_open: menu [placeholders= example: Placeholder Value; example2: Other placeholder]"
 
       # Opens the "menu" panel with the placeholders "example" and "example2", in the Middle position
-      - "cp_open: menu placeholders=[example: Placeholder Value],[example2: Other placeholder] position=Middle"
+      - "cp_open: menu [placeholders= example: Placeholder Value; example2: Other placeholder] [position=Middle]"
 ```
 
 ### `cp_give_item`
@@ -52,11 +52,11 @@ actions:
       - "cp_give_item: menu"
         
       # Sets the player's item in their hand to the "menu" panel's item
-      - "cp_give_item: menu slot=Hand"
+      - "cp_give_item: menu [slot=Hand]"
         
       # Sets the player's item in their offhand to the "menu" panel's item
-      - "cp_give_item: menu slot=Offhand"
+      - "cp_give_item: menu [slot=Offhand]"
         
       # Sets the player's item in their slot 1 to the "menu" panel's item
-      - "cp_give_item: menu slot=1" 
+      - "cp_give_item: menu [slot=1]" 
 ```

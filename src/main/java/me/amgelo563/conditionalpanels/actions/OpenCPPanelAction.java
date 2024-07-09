@@ -37,24 +37,24 @@ public class OpenCPPanelAction extends AbstractCPPanelAction {
 
     if (args.containsKey("placeholders")) {
       String allPlaceholders = args.get("placeholders");
-      String[] pairs = allPlaceholders.split("],\\[");
-
-      for (String pair : pairs) {
-        pair = pair.replace("[", "").replace("]", "");
-
-        String[] keyValue = pair.split(":");
-        if (keyValue.length != 2) {
-          this.logError("Invalid arguments on " + this.name + " action: Invalid pair " + pair + " for placeholders " + allPlaceholders + ".");
-          return;
-        }
-
-        String key = keyValue[0];
-        String value = keyValue[1].stripLeading();
-
-        panel.placeholders.addPlaceholder(key, value);
-      }
+      this.parseAndAddPlaceholders(allPlaceholders, panel);
     }
 
     panel.open(player, panelPosition);
+  }
+
+  protected void parseAndAddPlaceholders(String input, Panel panel) {
+    String[] pairs = input.split(";");
+
+    for (String pair : pairs) {
+      String[] keyValue = pair.split(":");
+      if (keyValue.length == 2) {
+        String key = keyValue[0].trim();
+        String value = keyValue[1].trim();
+        panel.placeholders.addPlaceholder(key, value);
+      } else {
+        this.logError("Invalid arguments on " + this.name + " action: Invalid pair " + pair + " for placeholders " + input + ".");
+      }
+    }
   }
 }
