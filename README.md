@@ -2,6 +2,18 @@
 
 A [ConditionalEvents](https://modrinth.com/plugin/conditionalevents) addon that adds integration with [CommandPanels](https://commandpanels.net/)
 
+## 📦 Installation
+
+> [!WARNING]
+> While the plugin should work from 1.8 to 1.21, it requires **Java 17**.
+> It's not advised to use ancient software like Spigot 1.8.8 or PaperSpigot 1.8.8. They can have issues with modern Java versions.
+> If you **really** need 1.8, consider using a maintained fork that fully supports modern Java.
+
+To install:
+* Download the latest version from the [Releases page](https://github.com/Amgelo563/ConditionalPanels/releases/latest)
+* Drop the plugin jar in your plugins folder. Make sure you have ConditionalEvents `4.47.1`+ and CommandPanels installed.
+* Enjoy!
+
 ## 🚀 Actions
 
 Actions are used in the format:
@@ -14,7 +26,7 @@ Opens a CommandPanels panel to the player.
 
 #### Usage:
 ```
-cp_open: <panel name> [position=Top/Bottom/Middle] [placeholders= placeholder1: value1; placeholder2: value2; ...]
+cp_open: panel_name [position=Top/Bottom/Middle] [placeholders= placeholder1: value1; placeholder2: value2; ...]
 ```
 
 #### Examples:
@@ -39,7 +51,7 @@ Gives or sets a CommandPanels item to the player.
 
 #### Usage:
 ```
-cp_give_item: <panel name> [slot=Hand/Offhand/1/2/3/...]
+cp_give_item: panel_name [slot=Hand/Offhand/1/2/3/...]
 ```
 
 If a slot isn't provided, the item will be given (filling an empty slot).
