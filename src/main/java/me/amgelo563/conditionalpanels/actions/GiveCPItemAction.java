@@ -55,6 +55,7 @@ public class GiveCPItemAction extends AbstractCPPanelAction {
 
       return;
     }
-    player.getInventory().addItem(item);
+
+    inventory.addItem(item);
   }
 }
