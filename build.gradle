@@ -35,7 +35,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly "org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT"
+    compileOnly "org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT"
     compileOnly "com.github.Ajneb97:ConditionalEvents:4.54.1"
     compileOnly "com.github.rockyhawk64:CommandPanels:724d503"
 }
